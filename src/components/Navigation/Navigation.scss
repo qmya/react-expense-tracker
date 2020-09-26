@@ -1,0 +1,63 @@
+@import "../../partials/mixins.scss";
+.navigation {
+    background-color: $black;
+    @include tablet {
+        display: flex;
+        @include tablet-padding;
+        padding-top: 1.5rem;
+    }
+    @include desktop {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    &__logo {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        @include tablet {
+            align-items: center;
+            height: fit-content;
+            padding-right: 56px;
+        }
+    }
+    &__container {
+        @include mobile-paragraph;
+        display: flex;
+        justify-content: space-around;
+        @include tablet {
+            align-items: center;
+        }
+    }
+    &__account {
+        text-align: center;
+        width: 50%;
+        @include label;
+        text-decoration: none;
+        padding-bottom: 0.3125rem;
+        @include tablet {
+            margin-right: 56px;
+        }
+        &--selected {
+            text-decoration: none;
+            border-bottom: 4px solid $white;
+            color: $white;
+        }
+    }
+    &__category {
+        @extend .navigation__account;
+        &--selected {
+            text-decoration: none;
+            border-bottom: 4px solid $white;
+            color: $white;
+        }
+    }
+    &__expense {
+        @extend .navigation__account;
+        &--selected {
+            text-decoration: none;
+            border-bottom: 4px solid $white;
+            color: $white;
+        }
+    }
+}
